@@ -65,8 +65,8 @@ trait JsonMarshalingCalculator extends Directives with JsonSupport with SimpleCa
   implicit val ec: ExecutionContext
 
   val calculatorRoute =
-    post {
-      path("calculate") {
+    path("calculate") {
+      post {
         entity(as[CalculatorRequest]) { simpleJson =>
           complete {
             calculate(simpleJson)
